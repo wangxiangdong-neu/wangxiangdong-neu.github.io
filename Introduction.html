@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homepage of WXD</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        /* 菜单 */
+        .ul1 {
+            list-style-type: none;
+            margin: 0;
+            margin-left: 10%;
+            padding: 0;
+            width: 12%;
+            background-color: #f1f1f1;
+            position: fixed;
+            height: 55%;
+            overflow: auto;
+        }
+        /* 菜单项 */
+        li a {
+            display: block;
+            color: #000;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+        /* 鼠标点击效果 */
+        /*li a.active {
+            background-color: #4CAF50;
+            color: white;
+        }*/
+
+        li a:hover:not(.active) {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .a1:link{
+            color: #000000;
+        }
+        .a1:hover{
+            color: #0181eb;
+        }
+        h4{
+            text-align: center;
+        }
+        .p1{
+            background-color: #000000;
+            color: #ffffff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<!--菜单项-->
+<ul class="ul1">
+    <h4>Navigation</h4>
+    <li><a href="Introduction.html">Home page</a></li>
+    <li><a href="#Interests">Interests</a></li>
+    <li><a href="#Experiences">Experiences</a> </li>
+    <li><a href="#Skills">Skills</a> </li>
+    <li><a href="#Project">Project</a> </li>
+    <li><a href="#Career goals">Career goals</a> </li>
+</ul>
+<div style="margin-left:21%;padding:1px 16px;height:1000px;">
+    <!--Home page-->
+    <div style="height: 480px;width: 800px;">
+        <div style="height: 250px;width: 800px;">
+            <img style="height: 80px;float: left" src="image/校徽.jpg">
+            <img style="height: 200px;padding: 20px 100px;text-align: center" src="image/图片1.jpg">
+        </div>
+        <h2 style="text-align: center">Xiangdong Wang</h2>
+        <p style="text-align: center">I am a sophomore at Northeastern University in Shenyang<br>
+            China, where I study on software engineering.</p>
+
+        <p style="text-align: center">Email: xiangdong.wang.neu@gmail.com</p>
+    </div>
+
+    <!--Interests-->
+    <div style="height: 400px;width: 800px;background: lightgrey;">
+        <h3 id="Interests">Interests</h3>
+        <hr>
+        <ul>
+            <li>Artificial Intelligence: Machine learning, Deep learning
+                <img src="image/AI.jpg" style="height: 200px;padding: 10px 50px;">
+                <img src="image/Ml.jpg" style="height: 200px;padding: 10px">
+            </li>
+            <li>Big Data</li>
+        </ul>
+    </div>
+    <!--Experiences-->
+    <div style="height: 500px;width: 800px;">
+        <h3 id="Experiences">Education experiences</h3>
+        <hr>
+        <div style="float: left;text-align: left;width: 500px;">
+            <p><b>Northeastern University Bachelor</b></p>
+            <p>Software engineering     Software Colloge</p>
+            <p><b>Northeastern University</b></p>
+            <p>Applied Chemistry College of Science</p>
+            <p>Award:
+                <ul>
+                    <li>No.2 scholarship of NEU.(2019-2020)</li>
+                    <li>Third Prize of the 12th LAN QIAO CUP Software
+                        Python Programming University In Provincial Competition Liaoning Division.(May 2021)</li>
+                </ul>
+            </p>
+        </div>
+        <div style="float: right;text-align: right;">
+            <p>Sept 2020 - Jul 2023</p>
+            <p>Shenyang, China</p>
+            <p>Sept 2019 - Sept 2020</p>
+            <p>Shenyang, China</p>
+        </div>
+    </div>
+    <!--Skills-->
+    <div style="height: 600px;width: 800px;/*background: lightgrey;*/">
+        <h3 id="Skills">Skills</h3>
+        <hr>
+        <ul>
+            <li>English level: Collge English Test Band Six: 522</li>
+            <p></p>
+            <li>Coding language: C++, Java and Python(still learning other languages like JS)<br>
+                <img src="image/234042355.jpg" style="height: 200px;width: 400px;padding: 1px 150px"></li>
+            <li>SRAD: RUP, Agile, UML, MVC, PCBMER</li>
+            <p></p>
+            <li>Data structure: Linked list, Stack, Hash table, Queues, Graph, Tree </li>
+            <p></p>
+            <li>Algorithm: Sorting algorithm, BFS and DFS, Brute Force, Minimum Spanning Tree, Shortest Path, String Matching and Dynamic programming</li>
+            <p></p>
+            <li>Database: SQL, MySQL, ER Data Model, Relational Data Model, Normalisation</li>
+        </ul>
+    </div>
+    <!--Project-->
+    <div style="height: 400px;width: 800px;">
+        <h3 id="Project">Project</h3>
+        <hr>
+        <div style="float: left;width: 150px;">
+            <img src="image/DS.jpg" style="height: 150px;padding: 25px 1px;">
+        </div>
+        <div style="margin-left: 1%;float: left;width: 640px;">
+            <p>A month ago, I did a database project<a class="a1" href="project/Assignment_2021.pdf" target="_blank">(project page)</a>.
+                This project is about a ticket booking system for a large chain of theaters.
+                We need to draw an entity relationship diagram, establish a relational data model and finish the relational normalization.
+                After I finished everything, I built the database, populated data, and queried the database.</p>
+            <p>You can see my project result by click here: <a class="a1" href="project/Assignment.pdf" target="_blank">Assignment</a></p>
+        </div>
+    </div>
+    <!--Career goals-->
+    <div style="height: 150px;width: 800px;">
+        <h3 id="Career goals">Career goals</h3>
+        <p>Actually, I want to create an application or website which has millions of users.</p>
+        <p class="p1" >Copyright © 2021 xiangdong.wang.neu@gmail.com</p>
+    </div>
+</div>
+</body>
+</html>
