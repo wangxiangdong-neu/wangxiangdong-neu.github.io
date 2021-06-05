@@ -1,0 +1,10 @@
+{"MyProject":[
+  {
+    "title":"MyProject 1",
+    "summary":"A month ago, I did a database project. In this project, I learned how to draw an entity relationship diagram, establish a relational data model and finish the relational normalization. After I finished everything, I built the database, populated data, and queried the database.",
+    "description": "This project is about a ticket booking system for a large chain of theaters.",
+    "type": "Database project",
+    "project_page": "project/Assignment_2021.pdf",
+    "result_page": "project/Assignment.pdf"
+  }
+]}

@@ -7,6 +7,7 @@
         body {
             margin: 0;
         }
+
         /* 菜单 */
         .ul1 {
             list-style-type: none;
@@ -16,57 +17,108 @@
             width: 160px;
             background-color: #f1f1f1;
             position: fixed;
-            height: 350px;
+            height: 400px;
             overflow: auto;
         }
+
         /* 菜单项 */
-        li a {
+        .li1 a {
             display: block;
             color: #000;
             padding: 8px 16px;
             text-decoration: none;
         }
+
         /* 鼠标点击效果 */
         /*li a.active {
             background-color: #4CAF50;
             color: white;
         }*/
 
-        li a:hover:not(.active) {
+        .li1 a:hover:not(.active) {
             background-color: #4CAF50;
             color: white;
         }
-        .a1:link{
+
+        .a1:link {
             color: #000000;
         }
-        .a1:hover{
+
+        .a1:hover {
             color: #0181eb;
         }
-        h4{
+
+        h4 {
             text-align: center;
         }
-        .p1{
+
+        .p1 {
             background-color: #000000;
             color: #ffffff;
             text-align: center;
         }
+
     </style>
+    <!--向服务器请求json数据-->
+    <script>
+        function loadXMLDoc()
+        {
+            var xmlhttp;
+            if (window.XMLHttpRequest)
+            {
+                //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+                xmlhttp=new XMLHttpRequest();
+            }
+            else
+            {
+                // IE6, IE5 浏览器执行代码
+                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange=function()
+            {
+                if (xmlhttp.readyState==4 && xmlhttp.status==200)
+                {
+                    myObj = JSON.parse(this.responseText);
+                    document.getElementById("title").innerText="Project title: "+myObj.MyProject[0].title;
+                    document.getElementById("summary").innerText="Summary: "+myObj.MyProject[0].summary;
+                    document.getElementById("description").innerText="Description: "+myObj.MyProject[0].description;
+                    document.getElementById("type").innerText="Type of project: "+myObj.MyProject[0].type;
+                }
+            }
+            xmlhttp.open("GET","project.json",true);
+            xmlhttp.send();
+        }
+    </script>
+    <!--实现用户编辑project information-->
+    <script>
+        function ChangeProject(){
+            document.getElementById("title").innerHTML="Project title: "+document.getElementById("changeTitle").value;
+            document.getElementById("summary").innerHTML="Summary: "+document.getElementById("changeSummary").value;
+            document.getElementById("description").innerHTML="Description: "+document.getElementById("changeDescription").value;
+            document.getElementById("summary").innerHTML="Summary: "+document.getElementById("changeSummary").value;
+            document.getElementById("type").innerHTML="Type of project: "+document.getElementById("changeType").value;
+            document.getElementById("project_page").innerHTML="Project page: "+document.getElementById("changeProject_page").value;
+            document.getElementById("result_page").innerHTML="Result page: "+document.getElementById("changeResult_page").value;
+        }
+    </script>
 </head>
-<body>
+<body onload="loadXMLDoc()">
 <!--菜单项-->
 <ul class="ul1">
     <h4>Navigation</h4>
-    <li><a href="index.html">Home page</a></li>
-    <li><a href="#Interests">Interests</a></li>
-    <li><a href="#Experiences">Experiences</a> </li>
-    <li><a href="#Skills">Skills</a> </li>
-    <li><a href="#Project">Project</a> </li>
-    <li><a href="#Career goals">Career goals</a> </li>
+    <li class="li1"><a href="index.html">Home page</a></li>
+    <li class="li1"><a href="#Update">Update</a> </li>
+    <li class="li1"><a href="#Project">Project</a></li>
+    <li class="li1"><a href="#Interests">Interests</a></li>
+    <li class="li1"><a href="#Experiences">Experiences</a></li>
+    <li class="li1"><a href="#Skills">Skills</a></li>
+    <li class="li1"><a href="#Career goals">Career goals</a></li>
 </ul>
-<div style="margin-left: 300px;height: 2650px;width: 1000px;">
-    <div style="padding:1px 16px;height:1000px;">
+<!--content-->
+<div  style="margin-left: 300px;width: 900px;">
+    <div style="padding:1px 16px;">
         <!--Home page-->
-        <div style="height: 480px;width: 800px;">
+        <div style="height: 600px;width: 800px;/*background: #0181eb*/">
             <div style="height: 250px;width: 800px;">
                 <img style="height: 80px;float: left" src="image/校徽.jpg">
                 <img style="height: 200px;padding: 20px 100px;text-align: center" src="image/图片1.jpg">
@@ -75,23 +127,86 @@
             <br>
             <p style="text-align: center">I am a sophomore at Northeastern University in Shenyang<br>
                 China, where I study on software engineering.</p>
-
+            <p style="text-align: center">Tips: It is recommended to use <b>Chrome</b> browser to visit.</p>
+            <br>
             <p style="text-align: center">Email: xiangdong.wang.neu@gmail.com</p>
         </div>
-
+        <!--Update-->
+        <div style="width: 800px;/*background: cornsilk*/">
+            <h3 id="Update">Update</h3>
+            <hr>
+            <ul>
+                <li>
+                    Third update on June 4, 2021: <br>
+                    <p></p>
+                    Creat a project form that allows a user to load the project data and edit it.<br>
+                    <p></p>
+                </li>
+                <li>
+                    Second update on June 3, 2021:<br>
+                    <p></p>
+                    Adding update module.<br>
+                    <p></p>
+                    Adjust the project module to the third part.<br>
+                    <p></p>
+                    List of projects on home page is generated from the loaded <a class="a1" href="project.json" target="_blank">project.json</a> file.<br>
+                    <p></p>
+                </li>
+                <li>First update on May 29,2021: Publish my homepage.</li>
+            </ul>
+        </div>
+        <!--Project-->
+        <div style="height: 1100px;width: 800px;">
+            <h3 id="Project">Project</h3>
+            <hr>
+            <div style="height: 450px;">
+                <div style="float: left;width: 150px;">
+                    <img src="image/DS.jpg" style="height: 150px;padding: 25px 1px;">
+                </div>
+                <div style="margin-left: 10px;float: left;width: 640px;">
+                    <p id="title"></p>
+                    <p id="summary"></p>
+                    <p id="description"></p>
+                    <p id="type"></p>
+                    <p id="project_page">Project Page: <a class="a1" href="project/Assignment_2021.pdf" target="_blank">Project Page</a></p>
+                    <p id="result_page">You can see my project result by click here: <a class="a1" href="project/Assignment.pdf"
+                                                                                        target="_blank">Assignment</a></p>
+                </div>
+            </div>
+            <p>You can change my project information through the form below: </p>
+            <!--project information 表单-->
+            <form action="">
+                <fieldset style="text-align: center">
+                    <legend style="text-align: center">Project information</legend>
+                    Project title: <input type="text" id="changeTitle" style="width: 600px;height: 20px"><br>
+                    <p></p>
+                    Summary: <input type="text" id="changeSummary" style="margin-left: 19px;width: 600px;height: 100px"><br>
+                    <p></p>
+                    Description: <input type="text" id="changeDescription" style="width: 600px;height: 50px"><br>
+                    <p></p>
+                    Type: <input type="text" id="changeType" style="margin-left: 63px;width: 600px;height: 20px"><br>
+                    <p></p>
+                    Project page: <input type="text" id="changeProject_page" style="width: 590px;height: 20px"><br>
+                    <p></p>
+                    Result page: <input type="text" id="changeResult_page" style="width: 600px;height: 20px"><br>
+                    <p></p>
+                    <button type="button" onclick="ChangeProject()" style="height: 40px;width: 60px;">Submit</button>
+                </fieldset>
+            </form>
+        </div>
         <!--Interests-->
         <div style="height: 400px;width: 800px;background: lightgrey;">
             <h3 id="Interests">Interests</h3>
             <hr>
             <ul>
                 <li>Artificial Intelligence: Machine learning, Deep learning</li>
-                    <div style="text-align: center;float: left;width: 350px;">
-                        <img src="image/AI.jpg" style="height: 200px;padding: 10px;">
+                <div style="text-align: center;float: left;width: 350px;">
+                    <img src="image/AI.jpg" style="height: 200px;padding: 10px;">
 
-                    </div>
-                    <div style="float: right;width: 400px;">
-                        <img src="image/Ml.jpg" style="height: 200px;padding: 10px;">
-                    </div>
+                </div>
+                <div style="float: right;width: 400px;">
+                    <img src="image/Ml.jpg" style="height: 200px;padding: 10px;">
+                </div>
                 <li>Big Data</li>
             </ul>
         </div>
@@ -101,15 +216,16 @@
             <hr>
             <div style="float: left;text-align: left;width: 500px;">
                 <p><b>Northeastern University Bachelor</b></p>
-                <p>Software engineering     Software Colloge</p>
+                <p>Software engineering Software Colloge</p>
                 <p><b>Northeastern University</b></p>
                 <p>Applied Chemistry College of Science</p>
                 <p>Award:
-                    <ul>
-                        <li>No.2 scholarship of NEU.(2019-2020)</li>
-                        <li>Third Prize of the 12th LAN QIAO CUP Software
-                            Python Programming University In Provincial Competition Liaoning Division.(May 2021)</li>
-                    </ul>
+                <ul>
+                    <li>No.2 scholarship of NEU.(2019-2020)</li>
+                    <li>Third Prize of the 12th LAN QIAO CUP Software
+                        Python Programming University In Provincial Competition Liaoning Division.(May 2021)
+                    </li>
+                </ul>
                 </p>
             </div>
             <div style="float: right;text-align: right;">
@@ -130,35 +246,23 @@
                     <img src="image/234042355.jpg" style="height: 200px;width: 400px;padding: 1px 150px"></li>
                 <li>SRAD: RUP, Agile, UML, MVC, PCBMER</li>
                 <p></p>
-                <li>Data structure: Linked list, Stack, Hash table, Queues, Graph, Tree </li>
+                <li>Data structure: Linked list, Stack, Hash table, Queues, Graph, Tree</li>
                 <p></p>
-                <li>Algorithm: Sorting algorithm, BFS and DFS, Brute Force, Minimum Spanning Tree, Shortest Path, String Matching and Dynamic programming</li>
+                <li>Algorithm: Sorting algorithm, BFS and DFS, Brute Force, Minimum Spanning Tree, Shortest Path, String
+                    Matching and Dynamic programming
+                </li>
                 <p></p>
                 <li>Database: SQL, MySQL, ER Data Model, Relational Data Model, Normalisation</li>
             </ul>
         </div>
-        <!--Project-->
-        <div style="height: 400px;width: 800px;">
-            <h3 id="Project">Project</h3>
-            <hr>
-            <div style="float: left;width: 150px;">
-                <img src="image/DS.jpg" style="height: 150px;padding: 25px 1px;">
-            </div>
-            <div style="margin-left: 1%;float: left;width: 640px;">
-                <p>A month ago, I did a database project<a class="a1" href="project/Assignment_2021.pdf" target="_blank">(project page)</a>.
-                    This project is about a ticket booking system for a large chain of theaters.
-                    We need to draw an entity relationship diagram, establish a relational data model and finish the relational normalization.
-                    After I finished everything, I built the database, populated data, and queried the database.</p>
-                <p>You can see my project result by click here: <a class="a1" href="project/Assignment.pdf" target="_blank">Assignment</a></p>
-            </div>
-        </div>
         <!--Career goals-->
-        <div style="height: 150px;width: 800px;">
+        <div style="height: 170px;width: 800px;">
             <h3 id="Career goals">Career goals</h3>
+            <hr>
             <p>Actually, I want to create an application or website which has millions of users.
                 <img src="image/图片2.jpg" style="height: 35px;width: 40px;">
             </p>
-            <p class="p1" >Copyright © 2021 xiangdong.wang.neu@gmail.com</p>
+            <p class="p1">Copyright © 2021 xiangdong.wang.neu@gmail.com</p>
         </div>
     </div>
 </div>
