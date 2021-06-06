@@ -7,7 +7,9 @@
         body {
             margin: 0;
         }
-
+        /*p{*/
+        /*    font-family: 'Microsoft YaHei';*/
+        /*}*/
         /* 菜单 */
         .ul1 {
             list-style-type: none;
@@ -102,7 +104,7 @@
         }
     </script>
 </head>
-<body onload="loadXMLDoc()">
+<body onload="loadXMLDoc()" style="font-family: 'Microsoft YaHei';font-size: 20px">  <!--解决不同浏览器默认字体和大小不一致-->
 <!--菜单项-->
 <ul class="ul1">
     <h4>Navigation</h4>
@@ -125,7 +127,7 @@
             </div>
             <h2 style="text-align: center">Xiangdong Wang</h2>
             <br>
-            <p style="text-align: center">I am a sophomore at Northeastern University in Shenyang<br>
+            <p style="text-align: center;font-size: 20px">I am a sophomore at Northeastern University in Shenyang<br>
                 China, where I study on software engineering.</p>
             <p style="text-align: center">Tips: It is recommended to use <b>Chrome</b> browser to visit.</p>
             <br>
@@ -164,10 +166,10 @@
                     <img src="image/DS.jpg" style="height: 150px;padding: 25px 1px;">
                 </div>
                 <div style="margin-left: 10px;float: left;height: 440px;width: 640px;/*background: greenyellow*/">
-                    <p id="title"></p>
-                    <p id="summary"></p>
-                    <p id="description"></p>
-                    <p id="type"></p>
+                    <p id="title">Project title: </p>
+                    <p id="summary">Summary: </p>
+                    <p id="description">Description: </p>
+                    <p id="type">Type of project: </p>
                     <p id="project_page">Project Page: <a class="a1" href="project/Assignment_2021.pdf" target="_blank">Project Page</a></p>
                     <p id="result_page">You can see my project result by click here: <a class="a1" href="project/Assignment.pdf"
                                                                                         target="_blank">Assignment</a></p>
