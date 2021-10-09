@@ -7,6 +7,7 @@
         body {
             margin: 0;
         }
+
         /*p{*/
         /*    font-family: 'Microsoft YaHei';*/
         /*}*/
@@ -14,12 +15,12 @@
         .ul1 {
             list-style-type: none;
             margin: 0;
-            margin-left: 140px;
+            margin-left: 180px;
             padding: 0;
             width: 160px;
             background-color: #f1f1f1;
             position: fixed;
-            height: 400px;
+            height: 360px;
             overflow: auto;
         }
 
@@ -61,55 +62,12 @@
         }
 
     </style>
-    <!--向服务器请求json数据-->
-    <script>
-        function loadXMLDoc()
-        {
-            var xmlhttp;
-            if (window.XMLHttpRequest)
-            {
-                //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
-                xmlhttp=new XMLHttpRequest();
-            }
-            else
-            {
-                // IE6, IE5 浏览器执行代码
-                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-            }
-            xmlhttp.onreadystatechange=function()
-            {
-                if (xmlhttp.readyState==4 && xmlhttp.status==200)
-                {
-                    myObj = JSON.parse(this.responseText);
-                    document.getElementById("title").innerText="Project title: "+myObj.MyProject[0].title;
-                    document.getElementById("summary").innerText="Summary: "+myObj.MyProject[0].summary;
-                    document.getElementById("description").innerText="Description: "+myObj.MyProject[0].description;
-                    document.getElementById("type").innerText="Type of project: "+myObj.MyProject[0].type;
-                }
-            }
-            xmlhttp.open("GET","project.json",true);
-            xmlhttp.send();
-        }
-    </script>
-    <!--实现用户编辑project information-->
-    <script>
-        function ChangeProject(){
-            document.getElementById("title").innerHTML="Project title: "+document.getElementById("changeTitle").value;
-            document.getElementById("summary").innerHTML="Summary: "+document.getElementById("changeSummary").value;
-            document.getElementById("description").innerHTML="Description: "+document.getElementById("changeDescription").value;
-            document.getElementById("summary").innerHTML="Summary: "+document.getElementById("changeSummary").value;
-            document.getElementById("type").innerHTML="Type of project: "+document.getElementById("changeType").value;
-            document.getElementById("project_page").innerHTML="Project page: "+document.getElementById("changeProject_page").value;
-            document.getElementById("result_page").innerHTML="Result page: "+document.getElementById("changeResult_page").value;
-        }
-    </script>
 </head>
 <body onload="loadXMLDoc()" style="font-family: 'Microsoft YaHei';font-size: 20px">  <!--解决不同浏览器默认字体和大小不一致-->
 <!--菜单项-->
 <ul class="ul1">
     <h4>Navigation</h4>
     <li class="li1"><a href="index.html">Home page</a></li>
-    <li class="li1"><a href="#Update">Update</a> </li>
     <li class="li1"><a href="#Project">Project</a></li>
     <li class="li1"><a href="#Interests">Interests</a></li>
     <li class="li1"><a href="#Experiences">Experiences</a></li>
@@ -117,7 +75,7 @@
     <li class="li1"><a href="#Career goals">Career goals</a></li>
 </ul>
 <!--content-->
-<div  style="margin-left: 300px;width: 900px;/*background: chocolate*/">
+<div style="margin-left: 350px;width: 900px;/*background: chocolate*/">
     <div style="padding:1px 16px;">
         <!--Home page-->
         <div style="height: 600px;width: 800px;/*background: #0181eb*/">
@@ -133,68 +91,51 @@
             <br>
             <p style="text-align: center">Email: xiangdong.wang.neu@gmail.com</p>
         </div>
-        <!--Update-->
-        <div style="height: 400px;width: 800px;/*background: cornsilk*/">
-            <h3 id="Update">Update</h3>
-            <hr>
-            <ul>
-                <li>
-                    Third update on June 4, 2021:
-                    <p></p>
-                    Creat a project form that allows a user to load the project data and edit it.
-                    <p></p>
-                </li>
-                <li>
-                    Second update on June 3, 2021:<br>
-                    <p></p>
-                    Adding update module.<br>
-                    <p></p>
-                    Adjust the project module to the third part.<br>
-                    <p></p>
-                    List of projects on home page is generated from the loaded <a class="a1" href="project.json" target="_blank">project.json</a> file.<br>
-                    <p></p>
-                </li>
-                <li>First update on May 29,2021: Publish my homepage.</li>
-            </ul>
-        </div>
         <!--Project-->
-        <div style="height: 1100px;width: 800px;">
+        <div style="height: 1600px;width: 800px;/*background: cyan*/">
             <h3 id="Project">Project</h3>
+            <p>No.1</p>
             <hr>
-            <div style="height: 450px;/*background: #0181eb*/">
-                <div style="float: left;height:440px;width: 150px;/*background: cyan*/">
+            <div style="height: 380px;/*background: #0181eb*/">
+                <div style="float: left;height:380px;width: 150px;/*background: cyan*/">
                     <img src="image/DS.jpg" style="height: 150px;padding: 25px 1px;">
                 </div>
-                <div style="margin-left: 10px;float: left;height: 440px;width: 640px;/*background: greenyellow*/">
-                    <p id="title">Project title: </p>
-                    <p id="summary">Summary: </p>
-                    <p id="description">Description: </p>
-                    <p id="type">Type of project: </p>
-                    <p id="project_page">Project Page: <a class="a1" href="project/Assignment_2021.pdf" target="_blank">Project Page</a></p>
-                    <p id="result_page">You can see my project result by click here: <a class="a1" href="project/Assignment.pdf"
-                                                                                        target="_blank">Assignment</a></p>
+                <div style="margin-left: 10px;float: left;height: 380px;width: 640px;/*background: greenyellow*/">
+                    <p id="title">Project title: Database Design Practice - Theater Booking System</p>
+                    <p><a href="project/Assignment_2021.pdf" target="_blank">Project Page</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="project/Assignment.pdf" target="_blank" >Result Page</a></p>
+                    <p id="summary">Summary: In May 2021, I did a database project. In this project, I learned how to draw an entity relationship diagram, establish a relational data model and finish the relational normalization. After I finished everything, I built the database, populated data, and queried the database.</p>
+                    <p id="description">Description: This project is about a ticket booking system for a large chain of theaters.</p>
+                    <p id="type">Type of project: Database project</p>
                 </div>
             </div>
-            <p>You can change my project information through the form below: </p>
-            <!--project information 表单-->
-            <form action="">
-                <fieldset style="text-align: center">
-                    <legend style="text-align: center">Project information</legend>
-                    Project title: <input type="text" id="changeTitle" style="width: 600px;height: 20px"><br>
-                    <p></p>
-                    Summary: <input type="text" id="changeSummary" style="margin-left: 19px;width: 600px;height: 100px"><br>
-                    <p></p>
-                    Description: <input type="text" id="changeDescription" style="width: 600px;height: 50px"><br>
-                    <p></p>
-                    Type: <input type="text" id="changeType" style="margin-left: 63px;width: 600px;height: 20px"><br>
-                    <p></p>
-                    Project page: <input type="text" id="changeProject_page" style="width: 590px;height: 20px"><br>
-                    <p></p>
-                    Result page: <input type="text" id="changeResult_page" style="width: 600px;height: 20px"><br>
-                    <p></p>
-                    <button type="button" onclick="ChangeProject()" style="height: 40px;width: 60px;">Submit</button>
-                </fieldset>
-            </form>
+            <p>No.2</p>
+            <hr>
+            <div style="height: 460px;/*background: #4CAF50*/">
+                <div style="float: left;height: 480px;width: 640px;/*background: greenyellow*/">
+                    <p>Project title: Data Structure and Algorithm Design Practice - Cloud Factory</p>
+                    <p><a href="project/智能云工厂任务书-2021.01.03.docx" target="_blank">Project Page</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="project/Data%20Structure.zip" target="_blank" >Result Page</a></p>
+                    <p>Summary: This application system is part of the functional modules of "Neusoft Smart Cloud Factory", see project page for details. It requires the completion of user management functions, equipment management functions, data dictionary functions, order management, product management, and order acceptance , Seven parts of production management functions. </p>
+                    <p>Description: This course design mainly examines the design and implementation of linear structures (arrays, linked lists, queues), trees, search structures, and related algorithms.</p>
+                    <p>Type of project: Data Structure and Algorithm Project</p>
+                </div>
+                <div style="float: left;height:440px;width: 150px;/*background: cyan*/">
+                    <img src="image/Data.webp" style="height: 150px;padding: 25px 1px;">
+                </div>
+            </div>
+            <p>No.3</p>
+            <hr>
+            <div style="/*background: #4CAF50*/">
+                <div style="float: left;height:440px;width: 150px;/*background: cyan*/">
+                    <img src="image/web.webp" style="height: 150px;padding: 25px 0px;">
+                </div>
+                <div style="float: left;height: 440px;width: 640px;/*background: greenyellow*/">
+                    <p>Project title: Web Development Program Design Practice - Cloud Factory</p>
+                    <p>&nbsp;<a href="project/Web开发程序设计实践任务书-云工厂(1).doc" target="_blank">Project Page</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="project/Web.zip" target="_blank" >Result Page</a></p>
+                    <p>Summary: This system in the practice is the cloud factory subsystem of the "Neusoft Intelligent Manufacturing Platform". The completed functions are based on the requirements specification. The implementation of the system follows the MVC design pattern and has a beautiful user interface. You can choose to apply some design patterns when designing and implementing the system.</p>
+                    <p>Description: Strengthen the analysis, design, coding and debugging capabilities of Web application projects.</p>
+                    <p>Type of project: Web Development Project</p>
+                </div>
+            </div>
         </div>
         <!--Interests-->
         <div style="height: 400px;width: 800px;background: lightgrey;">
@@ -246,7 +187,7 @@
                 <p></p>
                 <li>Coding language: C++, Java and Python(still learning other languages like JS)<br>
                     <img src="image/234042355.jpg" style="height: 200px;width: 400px;padding: 1px 150px"></li>
-                <li>SRAD: RUP, Agile, UML, MVC, PCBMER</li>
+                <li>JavaWeb：HTML、CSS、DOM、JavaScript、jQuery、Ajax、XML、JSP、Servlet、Tomcat、MySQL、JDBC</li>
                 <p></p>
                 <li>Data structure: Linked list, Stack, Hash table, Queues, Graph, Tree</li>
                 <p></p>
